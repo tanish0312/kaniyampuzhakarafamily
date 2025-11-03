@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaniyampuzhakara Family Memorial</title>
+  <style>
+    :root {
+      --bg: #f4f8f6;
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --accent: #2b5d4f;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: #111;
+      margin: 0;
+      padding: 36px 18px;
+      display: flex;
+      justify-content: center;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {from {opacity: 0;} to {opacity: 1;}}
+    .wrap {max-width: 900px; width: 100%;}
+    header {text-align: center; margin-bottom: 30px;}
+    h1 {color: var(--accent); font-size: 30px; margin-bottom: 6px;}
+    p.lead {color: var(--muted); margin: 0;}
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .photo {
+      width: 100%; height: 160px;
+      border-radius: 10px;
+      background: #e7edea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .name {font-weight: 700; margin-top: 10px; color: var(--accent);}
+    .meta {color: var(--muted); font-size: 14px;}
+    footer {text-align: center; margin-top: 30px; color: var(--muted); font-size: 14px;}
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .back:hover {color: #1d3d33;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="index.html" class="back">← Back to Home</a>
+    <header>
+      <h1>Kaniyampuzhakara Family Memorial</h1>
+      <p class="lead">“The memory of the righteous will be a blessing.” — Proverbs 10:7</p>
+    </header>
+
+    <main>
+      <div class="grid">
+        <div class="card member" data-name="K.M. ABRAHAM (Kunjavarachen Upadeshi)">
+          <div class="photo">Photo placeholder</div>
+          <div class="name">K.M. ABRAHAM (Kunjavarachen Upadeshi)</div>
+          <div class="meta">Age 73 — Passed: 2 Feb 1979</div>
+        </div>
+        <div class="card member" data-name="ANNAMMA ABRAHAM">
+          <div class="photo">Photo placeholder</div>
+          <div class="name">ANNAMMA ABRAHAM</div>
+          <div class="meta">Age 85 — Passed: 10 Nov 1995</div>
+        </div>
+        <div class="card member" data-name="K.A. SAMUEL (Samuelkutty)">
+          <div class="photo">Photo placeholder</div>
+          <div class="name">K.A. SAMUEL (Samuelkutty)</div>
+          <div class="meta">Age 72 — Passed: 4 Dec 2018</div>
+        </div>
+        <div class="card member" data-name="K.A. MATHEW (Joy)">
+          <div class="photo">Photo placeholder</div>
+          <div class="name">K.A. MATHEW (Joy)</div>
+          <div class="meta">Age 82 — Passed: 26 May 2020</div>
+        </div>
+        <div class="card member" data-name="PRITTU SAMUEL">
+          <div class="photo">Photo placeholder</div>
+          <div class="name">PRITTU SAMUEL</div>
+          <div class="meta">Age 43 — Passed: 21 Dec 2024</div>
+        </div>
+        <div class="card member" data-name="ANNIE VARGHESE">
+          <div class="photo">Photo placeholder</div>
+          <div class="name">ANNIE VARGHESE</div>
+          <div class="meta">Age 51 — Passed: 26 Aug 2025</div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Created with love by the Kaniyampuzhakara family.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Fade in effect for cards
+    document.querySelectorAll('.card').forEach((card, i) => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        card.style.transition = 'all 0.6s ease';
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(0)';
+      }, 200 + i * 120);
+    });
+  </script>
+<script>
+  // Smooth fade out when navigating back to home
+  const backButton = document.querySelector('.btn');
+  backButton.addEventListener('click', (event) => {
+    event.preventDefault(); // stop the instant jump
+    document.body.style.transition = 'opacity 0.6s ease';
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+      window.location.href = 'index.html'; // go home after fade
+    }, 600);
+  });
+</script>
+
+</body>
+</html>
+
+
